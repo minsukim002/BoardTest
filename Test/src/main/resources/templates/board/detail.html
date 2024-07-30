@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<div class="main">
+    <h1>게시물 상세보기</h1>
+    <label for="writer">작성자 :</label>
+    <input type="text" name="writer" id="writer" th:value="${BoardInformation.writer}" disabled>
+
+    <label for="title">제목 :</label>
+    <input type="text" name="title" id="title" th:value="${BoardInformation.title}" disabled>
+
+    <label for="content">내용 :</label>
+    <textarea name="content" id="content" th:text="${BoardInformation.content}" disabled></textarea>
+
+
+    <a th:href="@{/board/update/{seq}(seq=${BoardInformation.seq})}" id="update">수정</a>
+    <a th:href="@{/board/delete/{seq}(seq=${BoardInformation.seq})}" id="delete">삭제</a>
+</div>
+</body>
